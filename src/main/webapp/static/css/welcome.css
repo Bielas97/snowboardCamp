@@ -1,0 +1,5 @@
+.full-width-image {
+    height: 300px;
+    background: url("https://i.imgur.com/s5yJW46.jpg") no-repeat center center fixed;
+    background-size: cover;
+}

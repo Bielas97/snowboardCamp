@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>rejestracja</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/welcome.css"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">SnowCamp</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Wyjazdy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Spoty</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Kontakt</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/registration">Rejestracja</a>
+        </li>
+    </ul>
+</nav>
+
+<br>
+<div class="container-fluid full-width-image margins"></div>
+<hr>
+<div class="container">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
+                    <h3>Dodaj nowego użytkownika</h3>
+                    <form th:action="@{/registration.html}" method="post" th:object="${person}">
+                        <div class="form-group">
+                            <label class="h6" for="name">Imię:</label>
+                            <input id="name" class="form-control" type="text" th:field="*{name}" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="h6" for="surname">Nazwisko:</label>
+                            <input id="surname" class="form-control" type="text" th:field="*{surname}"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="h6">Kraj:</label>
+                            <ul class="list-inline">
+                                <li th:each="c : ${countries}" class="list-inline-item">
+                                    <input type="radio" th:field="*{country}" th:value="${c}">
+                                    <label th:text="${c}"></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label class="h6" for="city">Miasto:</label>
+                            <input id="city" class="form-control" type="text" th:field="*{city}"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="h6" for="postal">Kod pocztowy:</label>
+                            <input id="postal" class="form-control" type="text" th:field="*{postalCode}"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="h6">Wybierz płeć:</label>
+                            <ul class="list-inline">
+                                <li th:each="g : ${genders}" class="list-inline-item">
+                                    <input type="radio" th:field="*{gender}" th:value="${g}">
+                                    <label th:text="${g}"></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label class="h6" for="email">Email:</label>
+                            <input id="email" class="form-control" type="email" th:field="*{email}"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="h6" for="birth">Data urodzenia:</label>
+                            <input id="birth" class="form-control" type="date" th:field="*{dateOfBirth}"/>
+                        </div>
+                        <div>
+                            <input class="btn btn-success" type="submit" value="SEND"/>
+                            <input class="btn btn-danger" type="reset" value="RESET"/>
+                        </div>
+                        <hr>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid full-width-image margins"></div>
+<hr>
+<div class="container">
+    <p>Other contents....</p>
+</div>
+<br>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
