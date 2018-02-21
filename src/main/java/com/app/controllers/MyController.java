@@ -4,6 +4,7 @@ import com.app.dao.PersonDao;
 import com.app.model.Country;
 import com.app.model.Gender;
 import com.app.model.entities.Person;
+import com.app.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,10 +15,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MyController {
     private PersonDao personDao;
+    private PersonService personService;
 
     @Autowired
-    public MyController(PersonDao personDao) {
+    public MyController(PersonDao personDao, PersonService personService) {
         this.personDao = personDao;
+        this.personService = personService;
     }
 
     @GetMapping("/")
