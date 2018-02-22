@@ -31,4 +31,5 @@ public class Person {
     private String email;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
+    private String password;
 }

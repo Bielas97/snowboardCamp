@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class MyController {
     private PersonDao personDao;
@@ -35,6 +37,26 @@ public class MyController {
         model.addAttribute("genders", Gender.values());
 
         return "registration";
+    }
+
+    @GetMapping("/login")
+    public String login(Model model){
+        model.addAttribute("person", new Person());
+
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String insertLogin(@ModelAttribute Person person){
+        List<Person> people = personService.findByEmail(person.getEmail());
+        if(people.size() == 1){
+            Person p = people.get(0);
+            if(p.getPassword().equals(person.getPassword())){
+                return ""; // przekierwuje na bezpieczna strone
+            }
+        }
+
+        return "/errorLoginPage";
     }
 
     @PostMapping("/registration")
