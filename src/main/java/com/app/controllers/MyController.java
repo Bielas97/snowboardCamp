@@ -65,4 +65,9 @@ public class MyController {
         System.out.println(person);
         return "redirect:/";
     }
+
+    @GetMapping("/ang")
+    public String angular(){
+        return "ang";
+    }
 }

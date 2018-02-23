@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/welcome.css"/>
 </head>
 <body>
@@ -29,65 +30,63 @@
     </ul>
 </nav>
 
-
 <br>
 <div class="container-fluid full-width-image margins"></div>
 <hr>
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-8">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                </ol>
+        <div class="col-sm">
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="https://placehold.it/800x400?text=IMAGE" alt="Image">
-                        <div class="carousel-caption">
-                            <h3>Sell $</h3>
-                            <p>Money Money.</p>
+            <!--slajder-->
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" alt="First slide" src="/static/img/desk.jpg">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Wyjazd do Francji</h5>
+                            <p>cena: 2099 PLN</p>
                         </div>
                     </div>
-
-                    <div class="item">
-                        <img src="https://placehold.it/800x400?text=Another Image Maybe" alt="Image">
-                        <div class="carousel-caption">
-                            <h3>More Sell $</h3>
-                            <p>Lorem ipsum...</p>
-                        </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" alt="Second slide" src="/static/img/sn.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/static/img/snow.jpg" alt="Third slide">
                     </div>
                 </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="well">
-                <p>Some text..</p>
-            </div>
-            <div class="well">
-                <p>Upcoming Events..</p>
-            </div>
-            <div class="well">
-                <p>Visit Our Blog</p>
-            </div>
+        <div class="col-sm">
+            <!--newsletter-->
+            <h3>Zapisz się do newslettera:</h3>
+            <form>
+                <div class="form-group">
+                    <label class="h6" for="email">Email:</label>
+                    <input type="text" id="email" class="form-control" required>
+                </div>
+                <div>
+                    <input class="btn btn-success" type="submit" value="Wyślij">
+                    <input class="btn btn-danger" type="reset" value="Wyczyść">
+                </div>
+            </form>
         </div>
+
     </div>
-    <hr>
 </div>
+
+
+
+<hr>
+
 
 <div class="container-fluid full-width-image margins"></div>
 <hr>
@@ -116,9 +115,16 @@
         </div>
     </div>
 </div>
+<hr>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 </html>
