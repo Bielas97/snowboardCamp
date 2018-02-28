@@ -68,10 +68,15 @@
         <div class="col-sm">
             <!--newsletter-->
             <h3>Zapisz się do newslettera:</h3>
-            <form>
+            <form th:action="@{/welcome.html}" method="post" th:object="${newsletter}">
                 <div class="form-group">
                     <label class="h6" for="email">Email:</label>
-                    <input type="text" id="email" class="form-control" required>
+                    <input type="text" id="email" class="form-control" th:field="*{email}" required>
+                </div>
+                <div class="form-group">
+                    <label class="h6">Chcesz otrzymywać maile z konkursami?</label>
+                    <label class="checkbox-inline"><input type="radio" value="" th:field="*{yesOrNo}" >Tak</label>
+                    <label class="checkbox-inline"><input type="radio" value="" th:field="*{yesOrNo}" >Nie</label>
                 </div>
                 <div>
                     <input class="btn btn-success" type="submit" value="Wyślij">

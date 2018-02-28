@@ -1,8 +1,10 @@
 package com.app.controllers;
 
+import com.app.dao.NewsletterDao;
 import com.app.dao.PersonDao;
 import com.app.model.Country;
 import com.app.model.Gender;
+import com.app.model.entities.Newsletter;
 import com.app.model.entities.Person;
 import com.app.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +20,27 @@ import java.util.List;
 public class MyController {
     private PersonDao personDao;
     private PersonService personService;
+    private NewsletterDao newsletterDao;
 
     @Autowired
-    public MyController(PersonDao personDao, PersonService personService) {
+    public MyController(PersonDao personDao, PersonService personService, NewsletterDao newsletterDao) {
         this.personDao = personDao;
         this.personService = personService;
+        this.newsletterDao = newsletterDao;
     }
 
     @GetMapping("/")
-    public String welcome() {
+    public String welcome(Model model)
+    {
+        model.addAttribute("newsletter", new Newsletter());
         return "welcome";
+    }
+
+    @PostMapping("/welcome")
+    public String insertNewsletter(@ModelAttribute Newsletter newsletter){
+        System.out.println(newsletter);
+        newsletterDao.add(newsletter);
+        return "redirect:/";
     }
 
     @GetMapping("/registration")
@@ -64,10 +77,5 @@ public class MyController {
         personDao.add(person);
         System.out.println(person);
         return "redirect:/";
-    }
-
-    @GetMapping("/ang")
-    public String angular(){
-        return "ang";
     }
 }
